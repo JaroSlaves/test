@@ -19,9 +19,10 @@ settings = InlineKeyboardMarkup(inline_keyboard=[
 #         [InlineKeyboardButton(text='Не могу определиться',callback_data='NaN')]
 #         ])
 
+moods = ['Веселое','Бодрое','Грустное','Страшное','Не знаю']
+
 async def inline_moods():
     keyboard = InlineKeyboardBuilder()
-    moods = ['Веселое','Бодрое','Грустное','Страшное','Не знаю']
     for mood in moods:
         keyboard.add(InlineKeyboardButton(text = mood, callback_data=f'Moods_{mood}'))
     return keyboard.adjust(2).as_markup()

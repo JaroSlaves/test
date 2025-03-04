@@ -38,3 +38,8 @@ async def moods(callback:CallbackQuery):
     await callback.answer()
     await callback.message.edit_text('Выбери своё настроение, а я подберу под тебя фильм!', reply_markup =await kb.inline_moods())
 
+@router.callback_query(F.data.startswith('Moods_'))
+async def fun(callback:CallbackQuery):
+    await callback.answer()
+    print(callback.data)
+    await callback.message.edit_text(f'Ты выбрал настроение:{callback.data[6:]}', reply_markup =await kb.inline_moods())
