@@ -34,7 +34,7 @@ async def get_photo(message:Message):
                                caption='This is Toyota Crown!❤️')
 
 @router.callback_query(F.data == 'test')
-async def POMENYAT(callback:CallbackQuery):
+async def moods(callback:CallbackQuery):
     await callback.answer()
     await callback.message.edit_text('Выбери своё настроение, а я подберу под тебя фильм!', reply_markup =await kb.inline_moods())
 
